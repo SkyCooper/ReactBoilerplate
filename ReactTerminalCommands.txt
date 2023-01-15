@@ -1,0 +1,208 @@
+REACT KOMUTLARI:
+yarn home page : https://yarnpkg.com/
+npm  home page : https://www.npmjs.com/
+
+npm veya yarn kullanımı;
+bir ekleme yapılmak istendiğinde;
+nmp için --> npm i / install
+yarn için --> yarn add 
+
+
+REACT KURMAK İÇİN;
+npm install --save react react-dom
+yarn add --save react-dom
+
+
+SIFIRDAN PROJE OLUŞTURMAK İÇİN;
+yarn create react-app my-app -->   var olan dizine my-app isimli proje oluşturur.
+veya npx create-react-app my-app
+
+yarn create react-app . var olan dizin içine yeni klasör eklemeden proje oluşturur.
+yarn start
+
+
+STARTER PROJEYİ (Node.Module olmayan proje) ÇALIŞTIRMAK İÇİN
+yarn / yarn install
+yarn start
+
+
+NPM GÜNCELLEME:
+yarn add -g npm 
+veya
+npm i -g yarn
+
+
+SASS / SCSS İÇİN;
+(rc03 klasörü içinde notları)
+yard add sass
+import "./scss/App.scss";  -> scss dosyası nerde ise
+@import "./reset", "./variables"; --> parçalı scss dosyasını import etmek için
+
+
+BOOTSTRAP İÇİN;
+yarn add bootstrap
+import "bootstrap/dist/css/bootstrap.min.css"; --> CCS İMPORT LİNKİ-index.js ye
+
+
+REACT - BOOTSTRAP İÇİN;
+yarn add react-bootstrap
+import "bootstrap/dist/css/bootstrap.min.css"; --> CCS İMPORT LİNKİ-index.js ye
+
+import {Container} from "react-bootstrap"  --> container eklemek için 
+ya yukarıdaki gibi süslü içinde 
+import Container from "react-bootstrap/Container"; --> veya böyle, (daha doğru kullanım bu) 
+
+
+BOOTSTRAP KURDUKTAN SONRA, AÇILIR MENULER VB ÇALIŞMASI İÇİN;
+script linklerini index.htmlede body kapanış tagı üzerine ekle,
+ 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+
+
+UUID EKLEMEK İÇİN;
+yarn add uuid
+import {v1 as uuid} from "uuid" --> import et
+key = { uuid() }  --> kullan
+
+
+FONTAWSOME İÇİN;
+index.html'de head tagı içerisine;
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+STYLED-COMPONENTS İÇİN;
+(rc13 klasörü içinde notları)
+yarn add styled-components
+import styled from "styled-components"
+
+//*escb kısayolu ile buton oluşturuldu,
+const Button = styled.button `
+backticler arasına kebap-case ile stil verildi
+`
+import Button from "./styles/Button.styled"; böyle import edildi.
+
+veya global stil oluşturmak için;
+import { createGlobalStyle } from "styled-components";
+export const GlobalStyles = createGlobalStyle
+
+
+REACT-ICONS İÇİN;
+yarn add react-icons
+import { FaEdit } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
+Fa / Aİ gibi başında hangi kütüphaneye ait olduğunun kodu var, import ederken sonuna onu ekliyoruz.
+Componenet gibi import edilir. size ={} probu ile boyutu ayarlanabilir.
+
+
+
+AXIOS İÇİN;
+(rc09 klasörü içinde notları)
+yarn add axios
+import axios from "axios"; --> kullanmadan önce import et
+
+
+NETLIFY DEPLOY İŞLEMİ İÇİN;
+1- Manual Deploy:
+yarn run build komutu çalışınca klasör altında build klasörü oluşuyor.
+Bunu sürükle bırak yöntemi ile ilgili yere sürükle.
+2- Githup ile:
+a- önce projenin Githup reposu oluşturulur.
+b- Netlify içinden Add New site'den Import an existing project seçilir.
+c- Githupdan proje seçilir ve Deploy edilir. 
+ç- Domain settings'--> options 'den isim değişikliği yapılır.
+
+
+REACT ROUTER;
+(rc11-12 klasörü içinde notları)
+react bir library(yani kütüphane), framework değil,
+bundan dolayı içerisinde herşey hazır olarak bulunmuyor,
+serbest olarak isteyen istediğini yükleyip/ekleyip kullanabiliyor.
+react-router kütüphanesinin de ayrıca yüklenmesi gerekiyor.
+yarn add react-router-dom
+böyle yazılırsa en son versiyonu yüklenmiş olur. (şu anda 6.4.2)
+yarn add react-router-dom@6.3 şeklinde yazılırsa istenen versiyon yüklenir.
+
+
+REACT FORMİK İÇİN;(patika.dev)
+(form handle edilmesi için kullanılan third-part kütüphane)
+(rc24)
+yarn add formik
+import { Formik, Field, Form } from "formik";
+
+YUP İÇİN;
+yarn add yup
+(error handle edilmesi için kullanılan third-part kütüphane)
+
+
+MATERIAL UI İÇİN ;
+(rc17 klasörü içinde notları)
+1 - 3'lü paketi kur;
+yarn add @mui/material @emotion/react @emotion/styled  
+
+2 - index.html içine cdn olarak font ekle;
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+/>
+
+3 - iconlar için; 
+yarn add @mui/icons-material
+
+** import yaparken otomatik olarak süslü ile import ediyor;
+import { Typography } from "@mui/material";
+bütün kütüphaneyi indir, içinden al Typography kullan demek ama kullanışlı değil
+
+import Typography from "@mui/material/Typography";
+kütüphaneden sadece Typography al demek, daha hızlı çalışır.
+
+** önceden sx yerine kullanılan makeStyle eklemek için,
+yarn add @mui/styles
+(rc-17 klasöründe örnek bir component var (MakeStylesComp.jsx), artık kullanılmıyor, fakat eski projlerde karşılaşılabilir.)
+
+
+TAILWIND İÇİN;
+1- yarn add -D tailwindcss postcss autoprefixer
+2- npx tailwindcss init -p
+
+3- tailwindconfig içeriğini değiştir;
+
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+4- indexcss içine import et;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+5- yarn start ile projeyi çalıştır.
+
+FIREBASE İÇİN ;
+(rc18-19)
+yarn add firebase
+
+
+REDUX İÇİN;
+(rc21)
+-- hem redux hemde react-redux eklemek gerekli,
+yarn add redux react-redux
+--redux toolkit için;
+toolkit yüklemek için react-redux yüklemek gerekiyor,
+react-redux  yüklenmiş bir projeye toolkit eklemek için ; yarn add @reduxjs/toolkit
+veya sıfırdan eklemek için; yarn add react-redux @reduxjs/toolkit
+
+TOASTIFY İÇİN;
+(rc-19 VE RC23)
+yarn add react-toastify
